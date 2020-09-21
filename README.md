@@ -214,3 +214,11 @@ We can see that in addition to identifying general "cloudiness", the model inspe
 Why would you want to filter out this the rib cage if you're looking for cloudiness in the lungs? Well, the noise created by the pneumonia will "bleed" into the background. Essentially, the more concentrated noise present, the greater the general pixel intensity in all "layers" of the image, even in the background, causing what would look like deformations.
 
 The model also cross-references this information by inverting the pixel intensities (essentially creating a "negative" of the image). This really highlights the cloudiness in images, even in lower resolutions and serves as a cross-validation of sorts.
+
+## Final Assessment of the Model
+
+While it's not perfect, the model is working and has some decent accuracy, to boot. If my analysis of the intermediate activations is correct, then the model has found a way to aid in detecting pneumonia cases, even with noise.
+
+One thing that still bugs me is the lack of reproducibility. At times I feel like the results I got were just a luck of the draw. With more time, I would like to have rerun this model multiple times (20 or more) and take the average of the results. The other alternative would be to use the utilize the set_random_seed function from TensorFlow. Sadly, I didn't realize this until the all was said and done.
+
+All in all, I'm pretty pleased with the results.
